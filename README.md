@@ -1,60 +1,87 @@
-# Apresentacao
+# Marcelo Expedito · Portfólio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+> Estudante de Desenvolvimento de Sistemas na ETEC Horácio Augusto da Silveira, apaixonado por tecnologia e focado em **Desenvolvimento Web**, **Banco de Dados** e **Análise de Sistemas**. Objetivo: carreira como **Desenvolvedor Full Stack**.
 
-## Development server
+## 🔗 Acesse o site
 
-To start a local development server, run:
+### **[marcelo-slv.github.io/portf-lio](https://marcelo-slv.github.io/portf-lio/)**
+
+## ✨ Sobre o projeto
+
+Portfólio pessoal desenvolvido com **Angular 21** (standalone components), com visual dark, responsivo e acessível. Conta com as seções:
+
+- 🏠 **Início** — apresentação, disponibilidade e destaques
+- 👤 **Sobre** — um pouco da minha trajetória e objetivos
+- 🛠️ **Habilidades** — tecnologias e ferramentas que uso no dia a dia
+- 🎓 **Formação** — formação técnica e próximos passos na carreira
+- 📂 **Projetos** — projetos em desenvolvimento
+- 📬 **Contato** — GitHub, LinkedIn e Instagram
+
+## 🛠️ Tecnologias
+
+- **Angular 21** com standalone components, signals e View Transitions
+- **TypeScript**
+- **HTML5 / CSS3** — tema dark com CSS custom properties e design responsivo
+- **Vitest** — testes unitários
+- **GitHub Pages** — deploy via `angular-cli-ghpages`
+
+## 🚀 Rodando localmente
+
+Pré-requisito: **Node.js** e **npm**.
 
 ```bash
+# instala as dependências
+npm install
+
+# sobe o servidor de desenvolvimento
+npm start
+# ou
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abra o navegador em `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 📦 Build de produção
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+O build é gerado em `dist/apresentacao/browser`.
 
-## Running unit tests
+## 🌐 Publicando no GitHub Pages
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+```bash
+ng deploy
+```
+
+O deploy faz o build com o `baseHref` correto e publica na branch `gh-pages`. Para publicar em outro repositório, ajuste o `baseHref` no alvo `deploy` em `angular.json`.
+
+## 🧪 Testes
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 📁 Estrutura
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```
+src/
+├── app/
+│   ├── pages/
+│   │   ├── home/          # Início
+│   │   ├── sobre/         # Sobre mim
+│   │   ├── habilidades/   # Habilidades
+│   │   ├── formacao/      # Formação
+│   │   ├── projetos/      # Projetos
+│   │   └── contato/       # Contato
+│   ├── app.config.ts      # Configuração (router, view transitions)
+│   ├── app.routes.ts      # Rotas
+│   ├── app.ts             # Componente raiz
+│   └── reveal.directive.ts# Animação de scroll reveal
+└── styles.css             # Tema global
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-"# portf-lio" 
+Feito com 💛 por [Marcelo Expedito](https://github.com/Marcelo-Slv).

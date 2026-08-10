@@ -20,7 +20,9 @@ export class App {
   ) {
     if (isPlatformServer(platformId)) {
       const pathname = location.pathname;
-      const href = SITE_URL + (pathname === '/' ? '/' : pathname);
+      const base = (document.querySelector('base')?.getAttribute('href') ?? '/').replace(/^\/|\/$/g, '');
+      const route = (base ? pathname.replace(new RegExp(`^/${base}`), '') : pathname) || '/';
+      const href = SITE_URL + (route.startsWith('/') ? route : '/' + route);
       let link = document.querySelector('link[rel="canonical"]');
       if (!link) {
         link = document.createElement('link');

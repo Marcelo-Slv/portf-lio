@@ -8,7 +8,7 @@
 
 ## ✨ Sobre o projeto
 
-Portfólio pessoal desenvolvido com **Angular 21** (standalone components), com visual dark, responsivo e acessível. Conta com as seções:
+Portfólio pessoal desenvolvido com **Angular 21** (standalone components), com visual dark, responsivo e acessível. O site é **pré-renderizado (SSG)** no build — cada rota vira um HTML estático com o conteúdo renderizado no servidor e **hidratado** no navegador. Conta com as seções:
 
 - 🏠 **Início** — apresentação, disponibilidade e destaques
 - 👤 **Sobre** — um pouco da minha trajetória e objetivos
@@ -22,6 +22,8 @@ Portfólio pessoal desenvolvido com **Angular 21** (standalone components), com 
 - **Angular 21** com standalone components, signals e View Transitions
 - **TypeScript**
 - **HTML5 / CSS3** — tema dark com CSS custom properties e design responsivo
+- **Pré-renderização (SSG)** com `outputMode: static` e hidratação via `provideClientHydration`
+- **SEO** — título e canonical por rota, Open Graph/Twitter cards e structured data (JSON-LD)
 - **Vitest** — testes unitários
 - **GitHub Pages** — deploy via `angular-cli-ghpages`
 
@@ -47,7 +49,7 @@ Abra o navegador em `http://localhost:4200/`.
 ng build
 ```
 
-O build é gerado em `dist/apresentacao/browser`.
+O build gera o site estático em `dist/apresentacao/browser` (uma pasta por rota, `index.csr.html` como fallback e `404.html` para URLs não encontradas).
 
 ## 🌐 Publicando no GitHub Pages
 
@@ -75,10 +77,15 @@ src/
 │   │   ├── formacao/      # Formação
 │   │   ├── projetos/      # Projetos
 │   │   └── contato/       # Contato
-│   ├── app.config.ts      # Configuração (router, view transitions)
-│   ├── app.routes.ts      # Rotas
-│   ├── app.ts             # Componente raiz
+│   ├── app.config.ts      # Configuração (router, view transitions, hidratação)
+│   ├── app.routes.ts      # Rotas (lazy loading + título por rota)
+│   ├── app.ts             # Componente raiz (canonical por rota no SSR)
+│   ├── main.server.ts     # Bootstrap do SSR/SSG
+│   ├── server.ts          # Entry do SSR (AngularAppEngine)
 │   └── reveal.directive.ts# Animação de scroll reveal
+├── public/
+│   ├── 404.html           # Página de erro do GitHub Pages
+│   └── og-image.png       # Imagem para compartilhamento social
 └── styles.css             # Tema global
 ```
 

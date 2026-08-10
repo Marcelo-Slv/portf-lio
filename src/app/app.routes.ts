@@ -1,23 +1,37 @@
 import { Routes } from '@angular/router';
 
-import { ContatoComponent } from './pages/contato/contato';
-import { FormacaoComponent } from './pages/formacao/formacao';
-import { HabilidadesComponent } from './pages/habilidades/habilidades';
-import { HomeComponent } from './pages/home/home';
-import { ProjetosComponent } from './pages/projetos/projetos';
-import { SobreComponent } from './pages/sobre/sobre';
-
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    loadComponent: () => import('./pages/home/home').then((m) => m.HomeComponent),
     pathMatch: 'full',
     title: 'Marcelo Expedito · Desenvolvedor de Software',
   },
-  { path: 'sobre', component: SobreComponent, title: 'Sobre · Marcelo Expedito' },
-  { path: 'habilidades', component: HabilidadesComponent, title: 'Habilidades · Marcelo Expedito' },
-  { path: 'formacao', component: FormacaoComponent, title: 'Formação · Marcelo Expedito' },
-  { path: 'projetos', component: ProjetosComponent, title: 'Projetos · Marcelo Expedito' },
-  { path: 'contato', component: ContatoComponent, title: 'Contato · Marcelo Expedito' },
+  {
+    path: 'sobre',
+    loadComponent: () => import('./pages/sobre/sobre').then((m) => m.SobreComponent),
+    title: 'Sobre · Marcelo Expedito',
+  },
+  {
+    path: 'habilidades',
+    loadComponent: () =>
+      import('./pages/habilidades/habilidades').then((m) => m.HabilidadesComponent),
+    title: 'Habilidades · Marcelo Expedito',
+  },
+  {
+    path: 'formacao',
+    loadComponent: () => import('./pages/formacao/formacao').then((m) => m.FormacaoComponent),
+    title: 'Formação · Marcelo Expedito',
+  },
+  {
+    path: 'projetos',
+    loadComponent: () => import('./pages/projetos/projetos').then((m) => m.ProjetosComponent),
+    title: 'Projetos · Marcelo Expedito',
+  },
+  {
+    path: 'contato',
+    loadComponent: () => import('./pages/contato/contato').then((m) => m.ContatoComponent),
+    title: 'Contato · Marcelo Expedito',
+  },
   { path: '**', redirectTo: '' },
 ];

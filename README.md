@@ -23,7 +23,7 @@ Portfólio pessoal desenvolvido com **Angular 21** (standalone components), com 
 
 Sistema web para conferência de compras em mercados de autoatendimento: compara os produtos do banco de dados com os itens do fiscal, aponta divergências e gera relatórios com exportação em PDF.
 
-- 🛠️ **Angular · MySQL · Relatórios em PDF**
+- 🛠️ **PHP · MySQL · Relatórios em PDF**
 
 ## 🛠️ Tecnologias
 

@@ -23,9 +23,9 @@ Portfólio pessoal desenvolvido com **Angular 21** (standalone components), com 
 - **TypeScript**
 - **HTML5 / CSS3** — tema dark com CSS custom properties e design responsivo
 - **Pré-renderização (SSG)** com `outputMode: static` e hidratação via `provideClientHydration`
-- **SEO** — título e canonical por rota, Open Graph/Twitter cards e structured data (JSON-LD)
+- **SEO** — título e canonical por rota, sitemap.xml, robots.txt, Open Graph/Twitter cards e structured data (JSON-LD)
 - **Vitest** — testes unitários
-- **GitHub Pages** — deploy via `angular-cli-ghpages`
+- **GitHub Pages** — deploy via `angular-cli-ghpages` + **GitHub Actions** (CI com build, testes e publicação automática)
 
 ## 🚀 Rodando localmente
 
@@ -59,6 +59,8 @@ ng deploy
 
 O deploy faz o build com o `baseHref` correto e publica na branch `gh-pages`. Para publicar em outro repositório, ajuste o `baseHref` no alvo `deploy` em `angular.json`.
 
+> **Automação:** um push para a branch `main` dispara o workflow `.github/workflows/deploy.yml`, que roda os testes e publica automaticamente. O `ng deploy` manual continua funcionando para deploys fora do fluxo.
+
 ## 🧪 Testes
 
 ```bash
@@ -85,6 +87,8 @@ src/
 │   └── reveal.directive.ts# Animação de scroll reveal
 ├── public/
 │   ├── 404.html           # Página de erro do GitHub Pages
+│   ├── sitemap.xml        # Sitemap para indexação
+│   ├── robots.txt         # Diretivas para crawlers
 │   └── og-image.png       # Imagem para compartilhamento social
 └── styles.css             # Tema global
 ```

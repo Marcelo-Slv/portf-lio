@@ -752,10 +752,16 @@ h1 {
   border: 1px solid var(--card-border);
   background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card) 55%, var(--bg)));
   text-align: left;
+  text-decoration: none;
+  color: inherit;
   transition:
     transform 0.25s ease,
     border-color 0.25s ease,
     box-shadow 0.25s ease;
+}
+
+.project-card-link {
+  cursor: pointer;
 }
 
 .project-card:hover {
@@ -834,6 +840,27 @@ h1 {
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.65;
+}
+
+.card-link {
+  margin-top: 0.35rem;
+  align-self: flex-start;
+  color: var(--primary-soft);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: color 0.2s ease, gap 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.card-link::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.project-card-link:hover .card-link::after {
+  transform: translateX(3px);
 }
 
 .card-tags {

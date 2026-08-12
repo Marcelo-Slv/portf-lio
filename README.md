@@ -31,8 +31,6 @@ Sistema web para conferência de compras em mercados de autoatendimento: compara
 - **TypeScript**
 - **HTML5 / CSS3** — tema dark com CSS custom properties e design responsivo
 - **Pré-renderização (SSG)** com `outputMode: static` e hidratação via `provideClientHydration`
-- **SEO** — título e canonical por rota, sitemap.xml, robots.txt, Open Graph/Twitter cards e structured data (JSON-LD)
-- **Vitest** — testes unitários
 - **GitHub Pages** — deploy via `angular-cli-ghpages` + **GitHub Actions** (CI com build, testes e publicação automática)
 
 ## 🚀 Rodando localmente
